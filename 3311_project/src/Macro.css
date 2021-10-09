@@ -1,11 +1,137 @@
-*
-{
-    overflow:hidden;
-}
+
 .macro
 {
     background-color: #2f4353;
     background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%); 
     height: 100vh;
-    min-height : '100vh'
+    min-height : '100vh';
+    overflow-y: scroll;
+}
+
+.input_1
+{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    white-space: pre-line;
+    margin-left: 40px;
+    margin-top: 10px;
+    
+}
+
+.input_2
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 35px;
+    margin-left: 40px;
+    width: fit-content;
+    float: left;
+}
+
+.input_3
+{
+    width: fit-content;
+    float: left;
+    margin-top: 25px;
+    margin-left: 55px;
+}
+
+ 
+.gender
+{
+    
+    padding: 5px 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.activity,.goal
+{
+    padding: 5px 30px;
+    margin-left: 5px;
+    margin-right: 25px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.activity_label,.goal_label
+{
+    margin-left: 20px;
+}
+
+
+.age, .weight
+{
+    padding: 5px 20px;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 40px;
+}
+
+.height
+{
+    padding: 5px 5px;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.chart_title
+{
+    float: left;
+    text-decoration: 5px underline;
+}
+
+.chart
+{
+    
+    background-color: #e3efe8;
+    background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+    width: 350px;
+    height: 230px;
+    line-height: 15px;
+    float: left;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-right: 60px;
+    margin-top: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding:0px;
+    
+}
+
+.disp_macros
+{
+    margin-top: 80px;
+    display: inline-flex;
+    text-align: justify;
+}
+
+.protein_color
+{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(10, 168, 10);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 30px;
+}
+.carb_color
+{
+    height: 15px;
+    width: 15px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 30px;
+}
+.fat_color
+{
+    height: 15px;
+    width: 15px;
+    background-color: rgba(255, 0, 0, 0.534);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 30px;
 }

@@ -1,15 +1,11 @@
 
-*
-{
-    overflow:hidden;
-}
-
 .sampleMeal
 {
     background-color: #2f4353;
     background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%); 
     height: 100vh;
-    min-height : '100vh'
+    min-height : '100vh';
+    overflow-y: scroll;
 }
 
 .searchForm
@@ -52,4 +48,64 @@
     cursor: pointer;
     background-color: #e3efe8;
     background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+}
+.recipe_title
+{
+    text-decoration: 2px underline;
+}
+.recipe
+{
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px gray;
+    margin: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    align-items: center;
+    width: 25%;
+    color: white;
+    font-size: 1vw;
+}
+
+.image
+{
+    border-radius: 50px;
+    width: 200px;
+    height: 200px;
+}
+
+
+.protein_color
+{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(10, 168, 10);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.carb_color
+{
+    height: 15px;
+    width: 15px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.fat_color
+{
+    height: 15px;
+    width: 15px;
+    background-color: rgba(255, 0, 0, 0.534);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.disp_macros_info
+{
+    display: inline-flex;
+    text-align: justify;
 }

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
-
 .Title
 {
     /*
@@ -24,9 +23,64 @@
     transition: transform 0.3s ease;
     padding: 10px 30px;
     margin-right: 20px;
+    margin-top: 30px;
     
 }
 
+.header
+{
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.navbar-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+}
+
+.navbar-logo 
+{
+    color: #fff;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.fa-dumbbell
+{
+    margin-left: 0.5rem;
+    font-size: 1.8rem;
+}
+
+
+@media screen and (max-width: 960px) 
+{
+    .NavbarItems 
+    {
+      position: relative;
+    }
+    .navbar-logo 
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(25%, 50%);
+    }
+}
 /*
 .footer
 {

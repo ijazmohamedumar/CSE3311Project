@@ -1,11 +1,10 @@
 .App {
   text-align: center;
-  height: 100vh;
   min-height : '100vh'
 }
 
 .home
 {
     background-image: url("background_1.jpg");
-    height:87vh;
+    height:100vh;
 }

@@ -19,6 +19,13 @@ function Homepage()
     );
     return (
         <Router>
+            <nav className="header">   
+                <div className = "navbar-container">
+                    <Link to="/" className="navbar-logo">
+                        MACRO MEAL <i className="fas fa-dumbbell"/>
+                    </Link>
+                </div>
+            </nav>
             <div className="Title">
                 <h1>Welcome to Macro Meal!</h1>
                 <h3>Quick and easy way to get fit and achieve your body goals</h3>
