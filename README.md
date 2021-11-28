@@ -1,1 +1,2 @@
 # CSE3311Project
+Macro Meal is a user-friendly nutrition based web application that will allow the users to calculate their macronutrients and caloric needs. They will also be able to view sample meals based off the requested macronutrient / caloric profile for them to stick to their fitness goals. The web-app will be a quick and easy way for users to figure out what they need to do and eat in order to stay fit.  
