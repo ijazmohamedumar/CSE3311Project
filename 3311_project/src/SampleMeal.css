@@ -1,8 +1,6 @@
-
 .sampleMeal
 {
-    background-color: #2f4353;
-    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%); 
+    background-image: linear-gradient(315deg, #c2d9ba 0%, #c2d9ba 74%);  
     height: 100vh;
     min-height : '100vh';
     overflow-y: scroll;
@@ -46,8 +44,7 @@
     font-size: large;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #e3efe8;
-    background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+    background-image: linear-gradient(315deg, #71ac1a 0%, #9ecc65 74%);
 }
 .recipe_title
 {
@@ -61,7 +58,7 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-around;
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background-image: linear-gradient(to right, #050505 0%, rgb(46, 45, 45) 100%);
     align-items: center;
     width: 25%;
     color: white;
@@ -108,4 +105,23 @@
 {
     display: inline-flex;
     text-align: justify;
+}
+
+.URL
+{
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.5;
+}
+
+.calories
+{
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.kcal
+{
+    font-size: 1.0rem;
+    line-height: 1.5;
 }

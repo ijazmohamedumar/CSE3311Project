@@ -5,6 +5,8 @@
 
 .home
 {
-    background-image: url("background_1.jpg");
-    height:100vh;
+  background-image: url("g_background.jpg");
+  background-size: 100%;
+  background-position: top;
+  height:100vh;
 }

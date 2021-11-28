@@ -1,8 +1,6 @@
-
 .macro
 {
-    background-color: #2f4353;
-    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%); 
+    background-image: linear-gradient(315deg, #c2d9ba 0%, #c2d9ba 74%); 
     height: 100vh;
     min-height : '100vh';
     overflow-y: scroll;
@@ -14,8 +12,8 @@
     justify-content: left;
     align-items: left;
     white-space: pre-line;
-    margin-left: 40px;
-    margin-top: 10px;
+    margin-left: 230px;
+    margin-top: 35px;
     
 }
 
@@ -25,7 +23,7 @@
     justify-content: left;
     align-items: center;
     margin-top: 35px;
-    margin-left: 40px;
+    margin-left: 160px;
     width: fit-content;
     float: left;
 }
@@ -41,7 +39,6 @@
  
 .gender
 {
-    
     padding: 5px 20px;
     margin-left: 5px;
     cursor: pointer;
@@ -80,20 +77,23 @@
 {
     float: left;
     text-decoration: 5px underline;
+    margin-top: 40px;
+    margin-left: 80px;
 }
 
 .chart
 {
-    
-    background-color: #e3efe8;
-    background-image: linear-gradient(315deg, #e3efe8 0%, #96a7cf 74%);
+    background-image: linear-gradient(315deg, #699922 0%, #0c6612 74%);
+    color: rgb(252, 248, 248);
+    text-shadow: 1px 1px 0px rgb(10, 10, 10);
+    font-size: large;
     width: 350px;
-    height: 230px;
+    height: 280px;
     line-height: 15px;
     float: left;
-    margin-left: 40px;
+    margin-left: 50px;
     margin-bottom: 30px;
-    margin-right: 60px;
+    margin-right: 10px;
     margin-top: none;
     border: 2px solid black;
     border-radius: 10px;

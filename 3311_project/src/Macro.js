@@ -2,20 +2,43 @@ import React,{useState} from 'react';
 import "./Macro.css";
 import Navbar from './Navbar';
 
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+// Use yup resolver for input validation
+
+
 export default function Macro()
 {
-    const [Age, setAge] = useState(0);
+    const schema = yup.object().shape({
+        age: yup.number().required(),
+        weight: yup.number().required(),
+        feet: yup.number().required('Enter the feet'),
+        inches: yup.number().required()
+      });
+      
+    const {register, formState: {errors}} = useForm({
+        resolver: yupResolver(schema),
+    });
+
+    // create useStates for all input fields
+    const [Age, setAge] = useState("");
     const [Gender, setGender] = useState('Male'); 
-    const [Weight, setWeight] = useState(0);
-    const [HeightFT,setHeightFT] = useState(0);
-    const [HeightIN,setHeightIN] = useState(0);
+    const [Weight, setWeight] = useState("");
+    const [HeightFT,setHeightFT] = useState("");
+    const [HeightIN,setHeightIN] = useState("");
     const [Activity, setActivity] = useState('Sedentary');
     const [Goal, setGoal] = useState('Maintain');
+
+    // create useStates for results
     const [Final_Calories, setCalories] = useState(0);
     const [Final_Protein, setProtein] = useState(0);
     const [Final_Carb, setCarb] = useState(0);
     const [Final_Fat, setFat] = useState(0);
 
+    // create map for activity levels and their corresponding numbers
+    // which will be used in the calculation
     let Activity_Levels = new Map();
     Activity_Levels.set("Sedentary",1.2);
     Activity_Levels.set("Lightly Active",1.375);
@@ -24,7 +47,7 @@ export default function Macro()
     Activity_Levels.set("Very Active",1.9);
     Activity_Levels.set("Athlete",2.4);
 
-   
+    //initialize results to 0
     var Calories = 0;
     var Carbs = 0;
     var Fats = 0;
@@ -32,26 +55,29 @@ export default function Macro()
 
     function CalculateMacros()
     {   
-        var weight = Weight;
+        // Convert all input to number type and store in corresponding variables
+        var weight = Number(Weight);
         weight = (weight/2.205);
-        var Height = ((HeightFT*12) + (HeightIN)) * 2.54;
-        var age = Age;
+        var Height = ((Number(HeightFT)*12) + (Number(HeightIN))) * 2.54;
+        var age = Number(Age);
 
-        // men
+        // Men - Formula to calculate calories
         // 66.5 + 13.75 *(weight in kg) + 5.003*(height in cm) - 6.755*(Age)
         if(Gender === "Male")
         {
-
             Calories = 66.5 + 13.75 *(weight) + 5.003*(Height) - 6.755*(age);
         }
-        //women
-        //655.1 + 9.563 *(weight in kg) + 1.85*(height in cm) - 4.676*(Age)
+        // Women - Formula to calculate calories
+        // 655.1 + 9.563 *(weight in kg) + 1.85*(height in cm) - 4.676*(Age)
         if(Gender === "Female")
         {
             Calories = 655.1 + (9.563 *(weight)) + (1.85*(Height)) - (4.676*(age));
         }
 
+        // Final calculation for calories depends on activity level
         Calories = Calories * Activity_Levels.get(Activity);
+
+        // Calculate Calories, Protein, Fats, and Carbs based on fitness goal
         if(Goal === "Lose Weight")
         {
             // 500 deficit per day equals 1 lb weight loss per week
@@ -76,7 +102,7 @@ export default function Macro()
             Carbs = (Calories - (Protein*4) - (Fats*9)) / 4;
         }
         
-        
+        // Update results
         setCalories(Math.round(Calories));
         setCarb(Math.round(Carbs));
         setFat(Math.round(Fats));
@@ -96,47 +122,65 @@ export default function Macro()
             <form className = "macroForm" onSubmit={searchEntered}>
                 <div className = "input_1">
                     <label>
-                        Enter Age:
+                        Age:
                         <input 
-                            type="text"
+                            {...register("age")}
+                            required
                             className = "age"
+                            type="text"
+                            pattern="[0-9]*"
+                            placeholder = "25"
                             value = {Age} 
-                            onChange={(e) => setAge(Number(e.target.value))}
+                            onChange={(e) => setAge(e.target.value)}
                         />
+                        <p>{errors.age?.message}</p>
                     </label>
                     <label>
-                        Enter Weight in lbs:    
+                        Weight:    
                         <input 
+                            {...register("weight")}
+                            required
                             type="text"
+                            pattern="[0-9]*"
                             className = "weight"
+                            placeholder = "Pounds"
                             value = {Weight} 
-                            onChange={(e) => setWeight(Number(e.target.value))}
+                            onChange={(e) => setWeight(e.target.value)}
                         />
+                        <p>{errors.weight?.message}</p>
                     </label>
                     <label>
-                        Enter Height:    
+                        Height:    
                         <input 
+                            {...register("feet")}
+                            required
                             type="text"
+                            pattern="[0-9]*"
                             className = "height"
-                            placeholder = "Feet"
-                            value = {HeightFT} 
-                            onChange={(e) => setHeightFT(Number(e.target.value))}
-
+                            placeholder = "Feet" 
+                            value = {HeightFT}
+                            onChange={(e) => setHeightFT(e.target.value)}
+                            
                         />
+                        <span>{errors.feet?.message}</span>
                          <input 
+                            {...register("inches")}
+                            required
                             type="text"
+                            pattern="[0-9]*"
                             className = "height"
                             placeholder = "Inches"
                             value = {HeightIN} 
-                            onChange={(e) => setHeightIN(Number(e.target.value))}
+                            onChange={(e) => setHeightIN(e.target.value)}
                         />
+                        <span>{errors.inches?.message}</span>
                     </label>
                     
                 </div>
                 <br/>
                 <div className = "input_2">
                     <label className = "gender_label">
-                        Enter Gender:
+                        Gender:
                         <input 
                             type="radio"
                             className = "gender"
